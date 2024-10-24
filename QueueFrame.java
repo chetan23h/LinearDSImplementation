@@ -13,13 +13,13 @@ class QueueFrame extends JFrame {
     private int front = -1, rear = -1;
     private int maxSize;
     
-    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    // Dark Blue
-    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);  // Light Blue
+    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);   
+    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);
     private final Color TEXT_COLOR = Color.WHITE;
-    private final Color BUTTON_COLOR = new Color(231, 76, 60);         // Red
-    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);   // Dark Red
-    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);   // Light Gray
-    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); // Off White
+    private final Color BUTTON_COLOR = new Color(231, 76, 60);        
+    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);  
+    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);  
+    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); 
 
     public QueueFrame() {
         setTitle("Queue Operations");
@@ -27,7 +27,6 @@ class QueueFrame extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Top Panel for Size
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         topPanel.add(new JLabel("Queue Size:"));
         sizeField = new JTextField(10);
@@ -36,7 +35,6 @@ class QueueFrame extends JFrame {
         topPanel.add(sizeField);
         topPanel.add(createButton);
 
-        // Middle Panel for Operations
         JPanel middlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         middlePanel.add(new JLabel("Element:"));
         elementField = new JTextField(10);
@@ -54,12 +52,10 @@ class QueueFrame extends JFrame {
         middlePanel.add(dequeueButton);
         middlePanel.add(displayButton);
 
-        // Bottom Panel for Display
         displayArea = new JTextArea(10, 40);
         displayArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(displayArea);
 
-        // Add all panels
         add(topPanel, BorderLayout.NORTH);
         add(middlePanel, BorderLayout.CENTER);
         add(scrollPane, BorderLayout.SOUTH);
@@ -68,14 +64,11 @@ class QueueFrame extends JFrame {
     }
 
     private void applyTheme() {
-        // Frame styling
         this.getContentPane().setBackground(BACKGROUND_COLOR_1);
         
-        // Style text fields
         styleTextField(sizeField);
         styleTextField(elementField);
         
-        // Style panels
         JPanel[] panels = {(JPanel)getContentPane().getComponent(0), 
                           (JPanel)getContentPane().getComponent(1)};
         for (JPanel panel : panels) {
@@ -84,7 +77,6 @@ class QueueFrame extends JFrame {
             styleButtons(panel);
         }
         
-        // Style display area
         styleDisplayArea();
     }
 
@@ -120,7 +112,6 @@ class QueueFrame extends JFrame {
                         button.setPreferredSize(new Dimension(120, 40));
                         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
                         
-                        // Add hover effect
                         button.addMouseListener(new MouseAdapter() {
                             public void mouseEntered(MouseEvent evt) {
                                 button.setBackground(BUTTON_HOVER_COLOR);
@@ -175,7 +166,7 @@ class QueueFrame extends JFrame {
                 }
                 displayArea.append("Dequeued: " + queue[front++] + "\n");
                 if (front > rear) {
-                    front = rear = -1; // Reset queue when empty
+                    front = rear = -1; 
                 }
             }
 
