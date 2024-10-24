@@ -9,9 +9,9 @@ import java.awt.geom.*;
 public class WelcomePage extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
-    private Color primaryColor = new Color(123, 36, 20);  // New primary color (reddish)
-    private Color secondaryColor = new Color(211, 84, 0);  // New secondary color (orange)
-    private Color buttonHoverColor = new Color(192, 57, 43).brighter();  // Hover color (brighter red)
+    private Color primaryColor = new Color(123, 36, 20);  
+    private Color secondaryColor = new Color(211, 84, 0);  
+    private Color buttonHoverColor = new Color(192, 57, 43).brighter();  
 
     public static void main(String[] args) {
         try {
@@ -43,7 +43,7 @@ public class WelcomePage extends JFrame {
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
                 GradientPaint gradient = new GradientPaint(0, 0, new Color(52, 73, 94),
-                        getWidth(), getHeight(), new Color(211, 84, 0));  // New gradient (blue to orange)
+                        getWidth(), getHeight(), new Color(211, 84, 0));  
                 g2d.setPaint(gradient);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
             }
@@ -123,7 +123,7 @@ public class WelcomePage extends JFrame {
             }
         };
 
-        button.setPreferredSize(new Dimension(160, 100));  // Set medium button size
+        button.setPreferredSize(new Dimension(160, 100)); 
         button.setContentAreaFilled(false);
         button.setBorderPainted(false);
         button.setFocusPainted(false);
