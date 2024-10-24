@@ -1,4 +1,3 @@
-// WelcomePage.java
 package dsPage;
 
 import java.awt.*;
@@ -133,17 +132,3 @@ public class WelcomePage extends JFrame {
         return button;
     }
 }
-
-
-// ArrayFrame.java
-
- 
-// StackFrame.java
-
-
-// QueueFrame.java
-
-
-// CircularQueueFrame.java
-
-// LinkedListFrame.java
