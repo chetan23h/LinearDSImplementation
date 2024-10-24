@@ -43,13 +43,13 @@ class LinkedListFrame extends JFrame {
     private JTextField positionField;
     private JTextArea displayArea;
     
-    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    // Dark Blue
-    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);  // Light Blue
+    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    
+    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);  
     private final Color TEXT_COLOR = Color.WHITE;
-    private final Color BUTTON_COLOR = new Color(231, 76, 60);         // Red
-    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);   // Dark Red
-    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);   // Light Gray
-    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); // Off White
+    private final Color BUTTON_COLOR = new Color(231, 76, 60);         
+    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);   
+    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);   
+    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); 
 
     public LinkedListFrame() {
         setTitle("Linked List Operations");
@@ -118,24 +118,19 @@ class LinkedListFrame extends JFrame {
     }
     
     private void applyTheme() {
-        // Frame styling
         this.getContentPane().setBackground(BACKGROUND_COLOR_1);
         
-        // Style text fields
         styleTextField(elementField);
-        styleTextField(positionField);  // Add this line
+        styleTextField(positionField);  
         
-        // Style labels
         styleLabels(this);
         
-        // Style display area
         styleDisplayArea();
         
-        // Rest of the method remains the same...
         for (Component comp : this.getContentPane().getComponents()) {
             if (comp instanceof JPanel) {
                 JPanel panel = (JPanel) comp;
-                panel.setOpaque(false); // Make panels transparent to show gradient
+                panel.setOpaque(false); 
                 for (Component button : panel.getComponents()) {
                     if (button instanceof JButton) {
                         JButton btn = (JButton) button;
