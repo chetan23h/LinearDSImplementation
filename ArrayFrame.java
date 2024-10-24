@@ -12,14 +12,14 @@ class ArrayFrame extends JFrame {
     private JTextArea displayArea;
     private int[] array;
 
-    // Theme colors
-    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    // Dark Blue
-    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);  // Light Blue
+
+    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    
+    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);  
     private final Color TEXT_COLOR = Color.WHITE;
-    private final Color BUTTON_COLOR = new Color(231, 76, 60);         // Red
-    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);   // Dark Red
-    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);   // Light Gray
-    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); // Off White
+    private final Color BUTTON_COLOR = new Color(231, 76, 60);      
+    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);   
+    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);  
+    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249);
 
     public ArrayFrame() {
         setTitle("Array Operations");
@@ -27,7 +27,7 @@ class ArrayFrame extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
 
-        // Top Panel
+
         JPanel topPanel = createGradientPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         JLabel sizeLabel = new JLabel("Array Size:");
         sizeField = new JTextField(10);
@@ -37,7 +37,7 @@ class ArrayFrame extends JFrame {
         topPanel.add(sizeField);
         topPanel.add(createButton);
 
-        // Middle Panel
+
         JPanel middlePanel = createGradientPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         JLabel elementLabel = new JLabel("Element:");
         elementField = new JTextField(10);
@@ -60,16 +60,13 @@ class ArrayFrame extends JFrame {
         middlePanel.add(removeButton);
         middlePanel.add(displayButton);
 
-        // Display Area
         displayArea = new JTextArea(10, 40);
         JScrollPane scrollPane = new JScrollPane(displayArea);
 
-        // Add panels to frame
         add(topPanel, BorderLayout.NORTH);
         add(middlePanel, BorderLayout.CENTER);
         add(scrollPane, BorderLayout.SOUTH);
 
-        // Apply theme
         applyTheme();
     }
 
@@ -127,18 +124,14 @@ class ArrayFrame extends JFrame {
     }
 
     private void applyTheme() {
-        // Frame styling
         this.getContentPane().setBackground(BACKGROUND_COLOR_1);
         
-        // Style text fields
         styleTextField(sizeField);
         styleTextField(elementField);
         styleTextField(indexField);
         
-        // Style labels
         styleLabels(this);
         
-        // Style display area
         styleDisplayArea();
     }
 
@@ -172,7 +165,6 @@ class ArrayFrame extends JFrame {
         displayArea.setEditable(false);
     }
 
-    // Array Operations Methods
     private void createArray() {
         try {
             int size = Integer.parseInt(sizeField.getText());
@@ -225,7 +217,6 @@ class ArrayFrame extends JFrame {
     }
 }
 
-// Main class to run the application
  class ArrayOperations {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
