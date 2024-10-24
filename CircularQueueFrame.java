@@ -14,13 +14,13 @@ class CircularQueueFrame extends JFrame {
     private int front = -1, rear = -1;
     private int maxSize;
     
-    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    // Dark Blue
-    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219);  // Light Blue
+    private final Color BACKGROUND_COLOR_1 = new Color(44, 62, 80);    
+    private final Color BACKGROUND_COLOR_2 = new Color(52, 152, 219); 
     private final Color TEXT_COLOR = Color.WHITE;
-    private final Color BUTTON_COLOR = new Color(231, 76, 60);         // Red
-    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43);   // Dark Red
-    private final Color FIELD_BACKGROUND = new Color(236, 240, 241);   // Light Gray
-    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); // Off White
+    private final Color BUTTON_COLOR = new Color(231, 76, 60);        
+    private final Color BUTTON_HOVER_COLOR = new Color(192, 57, 43); 
+    private final Color FIELD_BACKGROUND = new Color(236, 240, 241); 
+    private final Color DISPLAY_AREA_BACKGROUND = new Color(248, 249, 249); 
 
     public CircularQueueFrame() {
         setTitle("Circular Queue Operations");
@@ -28,12 +28,12 @@ class CircularQueueFrame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        // Create gradient background panel as main container
+
         JPanel mainPanel = createGradientPanel(new BorderLayout(10, 10));
         mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         setContentPane(mainPanel);
 
-        // Top Panel for Size
+
         JPanel topPanel = createGradientPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         JLabel sizeLabel = createStyledLabel("Circular Queue Size:");
         sizeField = createStyledTextField();
@@ -44,7 +44,7 @@ class CircularQueueFrame extends JFrame {
         topPanel.add(sizeField);
         topPanel.add(createButton);
 
-        // Middle Panel for Operations
+   
         JPanel middlePanel = createGradientPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         JLabel elementLabel = createStyledLabel("Element:");
         elementField = createStyledTextField();
@@ -63,13 +63,12 @@ class CircularQueueFrame extends JFrame {
         middlePanel.add(dequeueButton);
         middlePanel.add(displayButton);
 
-        // Bottom Panel for Display
         displayArea = new JTextArea(10, 40);
         styleDisplayArea();
         JScrollPane scrollPane = new JScrollPane(displayArea);
         scrollPane.setBorder(BorderFactory.createEmptyBorder());
 
-        // Add all panels to main container
+   
         mainPanel.add(topPanel, BorderLayout.NORTH);
         mainPanel.add(middlePanel, BorderLayout.CENTER);
         mainPanel.add(scrollPane, BorderLayout.SOUTH);
@@ -154,7 +153,7 @@ class CircularQueueFrame extends JFrame {
         displayArea.setEditable(false);
     }
 
-    // ... Rest of the methods (createCircularQueue, enqueue, dequeue, displayQueue) remain the same ...
+
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
